@@ -2,7 +2,7 @@
 	"name": "emacs-region",
 	"displayName": "emacs_region",
 	"description": "this extension provides region selection like emacs",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"publisher": "tomohiro",
 	"engines": {
 		"vscode": "^0.10.6"

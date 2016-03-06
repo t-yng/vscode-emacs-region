@@ -1,13 +1,14 @@
 # README
-## This is the README for your extension "emacs-region" 
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+This is extension for Visual Studio Code to provide function of region selection like Emacs.
 
-* Split the editor (`Cmd+\` on OSX or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on OSX or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (OSX) to see a list of Markdown snippets
-
-### For more information
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+## Keybindgs
+|key|explanation|
+|---|-----------|
+|ctrl+f|move selection cursor to right|
+|ctrl+b|move selection cursor to left|
+|ctrl+p|move selection cursor to up|
+|ctrl+n|move selection cursor to down|
+|ctrl+space|start region mode|
+|ctrl+g|exit region mode|
 
 ** Enjoy!**
