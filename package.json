@@ -1,0 +1,60 @@
+{
+	"name": "emacs-region",
+	"displayName": "emacs_region",
+	"description": "this extension provides region selection like emacs",
+	"version": "0.0.1",
+	"publisher": "tomohiro",
+	"engines": {
+		"vscode": "^0.10.6"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/src/extension",
+    "contributes": {
+        "keybindings": [
+            {
+                "key": "ctrl+F",
+                "command": "emacs.cursorRight",
+                "when": "editorTextFocus"
+            },
+                        {
+                "key": "ctrl+B",
+                "command": "emacs.cursorLeft",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+P",
+                "command": "emacs.cursorUp",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+N",
+                "command": "emacs.cursorDown",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+space",
+                "command": "emacs.startRegionMode",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+G",
+                "command": "emacs.exitRegionMode",
+                "when": "editorTextFocus"
+            }
+        ]
+    },
+	"scripts": {
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"typescript": "^1.7.5",
+		"vscode": "^0.11.0"
+	}
+}
