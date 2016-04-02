@@ -1,11 +1,15 @@
 {
 	"name": "emacs-region",
-	"displayName": "emacs_region",
+	"displayName": "emacs-region",
 	"description": "this extension provides region selection like emacs",
 	"version": "1.0.0",
-	"publisher": "tomohiro",
+	"publisher": "t-yng",
 	"engines": {
 		"vscode": "^0.10.6"
+	},
+	 "repository": {
+        "type": "git",
+        "url": "https://github.com/t-yng/vscode-emacs-region"
 	},
 	"categories": [
 		"Other"

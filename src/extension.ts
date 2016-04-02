@@ -1,3 +1,7 @@
+// Copyright (c) 2016 Nisheet Jain
+// Released under the MIT license
+// https://github.com/nisheetjain/vscode-emacs/blob/master/LICENSE.txt
+
 'use strict';
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below

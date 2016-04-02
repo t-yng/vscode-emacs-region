@@ -10,5 +10,3 @@ This is extension for Visual Studio Code to provide function of region selection
 |ctrl+n|move selection cursor to down|
 |ctrl+space|start region mode|
 |ctrl+g|exit region mode|
-
-** Enjoy!**
