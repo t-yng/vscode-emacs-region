@@ -1,4 +1,4 @@
-# README
+# vscode-emacs-region
 This is an extension for Visual Studio Code which provides region selection similar to that of Emacs.
 
 ## Keybindings
@@ -34,13 +34,13 @@ You can use the `inRegionMode` context flag in the `when` clause of your keybind
 
 ```json
 {
-    "key": <DESIRED KEY>,
-    "command": <CURSOR MOVE COMMAND>,
+    "key": "DESIRED KEY",
+    "command": "CURSOR MOVE COMMAND",
     "when": "editorTextFocus && !inRegionMode"
 },
 {
-    "key": <DESIRED KEY>,
-    "command": <CURSOR MOVE & SELECT COMMAND>,
+    "key": "DESIRED KEY",
+    "command": "CURSOR MOVE & SELECT COMMAND",
     "when": "editorTextFocus && inRegionMode"
 }
 ```
@@ -70,4 +70,4 @@ Add the following to your `keybinds.json`:
     "command": "block-travel.selectDown",
     "when": "editorTextFocus && inRegionMode"
 }
-```
+```
