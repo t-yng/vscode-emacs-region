@@ -181,6 +181,26 @@
                 "when": "editorTextFocus && inRegionMode"
             },
             {
+                "key": "left",
+                "command": "cursorColumnSelectLeft",
+                "when": "editorTextFocus && inRegionMode && inColumnRegionMode"
+            },
+            {
+                "key": "down",
+                "command": "cursorColumnSelectDown",
+                "when": "editorTextFocus && inRegionMode && inColumnRegionMode"
+            },
+            {
+                "key": "right",
+                "command": "cursorColumnSelectRight",
+                "when": "editorTextFocus && inRegionMode && inColumnRegionMode"
+            },
+            {
+                "key": "up",
+                "command": "cursorColumnSelectUp",
+                "when": "editorTextFocus && inRegionMode && inColumnRegionMode"
+            },
+            {
                 "key": "alt+w",
                 "command": "emacs.action.clipboardCopyAction"
             },
@@ -215,6 +235,11 @@
             {
                 "key": "ctrl+space",
                 "command": "emacs.startRegionMode",
+                "when": "editorFocus"
+            },
+            {
+                "key": "ctrl+x space",
+                "command": "emacs.startColumnRegionMode",
                 "when": "editorFocus"
             }
         ]

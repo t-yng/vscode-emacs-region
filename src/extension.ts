@@ -7,17 +7,27 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
+enum RegionMode {
+    None,
+    RegionMode,
+    ColumnRegionMode
+}
+
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-    setRegionMode(false);
+    setRegionMode(RegionMode.None);
 
-    context.subscriptions.push(vscode.commands.registerCommand('emacs.startRegionMode', ()=>{
+    context.subscriptions.push(vscode.commands.registerCommand('emacs.startRegionMode', () => {
         startRegionMode();
     }));
 
-    context.subscriptions.push(vscode.commands.registerCommand('emacs.exitRegionMode', ()=>{
-        exitRegionMode()
+    context.subscriptions.push(vscode.commands.registerCommand('emacs.startColumnRegionMode', () => {
+        startColumnRegionMode();
+    }));
+
+    context.subscriptions.push(vscode.commands.registerCommand('emacs.exitRegionMode', () => {
+        exitRegionMode();
     }));
 
     var selectionActions: string[] = ["action.clipboardCopyAction", "action.clipboardPasteAction", "action.clipboardCutAction"]
@@ -36,15 +46,21 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 function startRegionMode() {
-    setRegionMode(true).then(removeSelection);
+    setRegionMode(RegionMode.RegionMode).then(removeSelection);
+}
+
+function startColumnRegionMode() {
+    setRegionMode(RegionMode.ColumnRegionMode).then(removeSelection);
 }
 
 function exitRegionMode() {
-    setRegionMode(false).then(removeSelection);
+    setRegionMode(RegionMode.None).then(removeSelection);
 }
 
-function setRegionMode(value): Thenable<{}> {
-    return vscode.commands.executeCommand('setContext', 'inRegionMode', value);
+function setRegionMode(value: RegionMode): Thenable<{}> {
+    return vscode.commands.executeCommand('setContext', 'inRegionMode', value != RegionMode.None).then(() => {
+        return vscode.commands.executeCommand('setContext', 'inColumnRegionMode', value == RegionMode.ColumnRegionMode);
+    });
 }
 
 function removeSelection() {
@@ -54,5 +70,5 @@ function removeSelection() {
 
 // this method is called when your extension is deactivated
 export function deactivate() {
-    setRegionMode(false)
+    setRegionMode(RegionMode.None)
 }
