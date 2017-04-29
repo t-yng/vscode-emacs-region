@@ -23,7 +23,10 @@ This is an extension for Visual Studio Code which provides region selection simi
 |ctrl+y|paste and stop selection|
 |ctrl+w|cut and stop selection|
 |alt+w|copy and stop selection|
+|backspace|delete selected text and exit region mode|
+|delete|delete selected text and exit region mode|
 |ctrl+space|start region mode|
+|ctrl+x space|start column region mode|
 |ctrl+g|exit region mode|
 
 ## Compatibility With Other Extensions
