@@ -7,35 +7,37 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
-var inRegionMode: boolean = false;
-
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
+    setRegionMode(false);
 
-    // リージョン選択モードを開始
     context.subscriptions.push(vscode.commands.registerCommand('emacs.startRegionMode', ()=>{
-        removeSelection();
-        inRegionMode = true;
+        startRegionMode();
     }));
 
-    // リージョン選択モードを終了
     context.subscriptions.push(vscode.commands.registerCommand('emacs.exitRegionMode', ()=>{
-        if(!inRegionMode){
-            return ;
-        }
-        removeSelection();
-        inRegionMode = false;
+        exitRegionMode()
     }));
 
-    var cursorMoves : string[] = ["cursorUp", "cursorDown", "cursorLeft", "cursorRight"];
+    var selectionActions: string[] = ["action.clipboardCopyAction", "action.clipboardPasteAction", "action.clipboardCutAction"]
+    selectionActions.forEach((selectionAction) => {
+        context.subscriptions.push(vscode.commands.registerCommand("emacs." + selectionAction, () => {
+            vscode.commands.executeCommand("editor." + selectionAction).then(exitRegionMode);
+        }))
+    })
+}
 
-    // リージョン選択モードなら、選択コマンドを実行
-    cursorMoves.forEach((cursormove) => {
-        context.subscriptions.push(vscode.commands.registerCommand("emacs."+cursormove, ()=>{
-            vscode.commands.executeCommand(inRegionMode? cursormove+"Select" : cursormove);
-        }));
-    });
+function startRegionMode() {
+    setRegionMode(true).then(removeSelection);
+}
+
+function exitRegionMode() {
+    setRegionMode(false).then(removeSelection);
+}
+
+function setRegionMode(value): Thenable<{}> {
+    return vscode.commands.executeCommand('setContext', 'inRegionMode', value);
 }
 
 function removeSelection(){
@@ -45,4 +47,5 @@ function removeSelection(){
 
 // this method is called when your extension is deactivated
 export function deactivate() {
+    setRegionMode(false)
 }
