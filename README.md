@@ -28,7 +28,7 @@ This is an extension for Visual Studio Code which provides region selection simi
 
 ## Compatibility With Other Extensions
 
-It is possible to combine this extension with other selection extensions such as [Block Travel](https://github.com/sashaweiss/vscode_block_travel).
+It is possible to combine this extension with other cursor movement extensions.
 
 You can use the `inRegionMode` context flag in the `when` clause of your keybind to provide different behaviour for region mode vs. cursor mode. The default keybinds are laid out as follows:
 
@@ -41,33 +41,6 @@ You can use the `inRegionMode` context flag in the `when` clause of your keybind
 {
     "key": "DESIRED KEY",
     "command": "CURSOR MOVE & SELECT COMMAND",
-    "when": "editorTextFocus && inRegionMode"
-}
-```
-
-### Block Travel
-
-Add the following to your `keybinds.json`:
-
-```json
-{
-    "key": "ctrl+up",
-    "command": "block-travel.jumpUp",
-    "when": "editorTextFocus && !inRegionMode"
-},
-{
-    "key": "ctrl+down",
-    "command": "block-travel.jumpDown",
-    "when": "editorTextFocus && !inRegionMode"
-},
-{
-    "key": "ctrl+up",
-    "command": "block-travel.selectUp",
-    "when": "editorTextFocus && inRegionMode"
-},    
-{
-    "key": "ctrl+down",
-    "command": "block-travel.selectDown",
     "when": "editorTextFocus && inRegionMode"
 }
 ```
