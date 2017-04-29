@@ -193,9 +193,19 @@
                 "command": "emacs.action.clipboardPasteAction"
             },
             {
+                "key": "backspace",
+                "command": "emacs.deleteLeft",
+                "when": "inRegionMode"
+            },
+            {
+                "key": "delete",
+                "command": "emacs.deleteRight",
+                "when": "inRegionMode"
+            },
+            {
                 "key": "ctrl+g",
                 "command": "cancelSelection",
-                "when": "editorHasTextFocus && editorHasSelection"
+                "when": "editorFocus && editorHasSelection"
             },
             {
                 "key": "ctrl+g",

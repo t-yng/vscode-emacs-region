@@ -26,6 +26,13 @@ export function activate(context: vscode.ExtensionContext) {
             vscode.commands.executeCommand("editor." + selectionAction).then(exitRegionMode);
         }))
     })
+
+    var deletionActions: string[] = ["deleteLeft", "deleteRight"]
+    deletionActions.forEach((deletionAction) => {
+        context.subscriptions.push(vscode.commands.registerCommand("emacs." + deletionAction, () => {
+            vscode.commands.executeCommand(deletionAction).then(exitRegionMode);
+        }))
+    })
 }
 
 function startRegionMode() {
@@ -40,7 +47,7 @@ function setRegionMode(value): Thenable<{}> {
     return vscode.commands.executeCommand('setContext', 'inRegionMode', value);
 }
 
-function removeSelection(){
+function removeSelection() {
     var pos: vscode.Position = vscode.window.activeTextEditor.selection.active;
     vscode.window.activeTextEditor.selection = new vscode.Selection(pos, pos);
 }
