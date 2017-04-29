@@ -163,12 +163,12 @@
             {
                 "key": "ctrl+v",
                 "command": "cursorPageDownSelect",
-                "when": "editorTextFocus && !inRegionMode"
+                "when": "editorTextFocus && inRegionMode"
             },
             {
                 "key": "alt+v",
                 "command": "cursorPageUpSelect",
-                "when": "editorTextFocus && !inRegionMode"
+                "when": "editorTextFocus && inRegionMode"
             },
             {
                 "key": "alt+shift+,",
