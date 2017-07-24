@@ -163,12 +163,12 @@
             {
                 "key": "ctrl+v",
                 "command": "cursorPageDownSelect",
-                "when": "editorTextFocus && !inRegionMode"
+                "when": "editorTextFocus && inRegionMode"
             },
             {
                 "key": "alt+v",
                 "command": "cursorPageUpSelect",
-                "when": "editorTextFocus && !inRegionMode"
+                "when": "editorTextFocus && inRegionMode"
             },
             {
                 "key": "alt+shift+,",
@@ -179,6 +179,26 @@
                 "key": "alt+shift+.",
                 "command": "cursorBottomSelect",
                 "when": "editorTextFocus && inRegionMode"
+            },
+            {
+                "key": "left",
+                "command": "cursorColumnSelectLeft",
+                "when": "editorTextFocus && inRegionMode && inColumnRegionMode"
+            },
+            {
+                "key": "down",
+                "command": "cursorColumnSelectDown",
+                "when": "editorTextFocus && inRegionMode && inColumnRegionMode"
+            },
+            {
+                "key": "right",
+                "command": "cursorColumnSelectRight",
+                "when": "editorTextFocus && inRegionMode && inColumnRegionMode"
+            },
+            {
+                "key": "up",
+                "command": "cursorColumnSelectUp",
+                "when": "editorTextFocus && inRegionMode && inColumnRegionMode"
             },
             {
                 "key": "alt+w",
@@ -193,9 +213,19 @@
                 "command": "emacs.action.clipboardPasteAction"
             },
             {
+                "key": "backspace",
+                "command": "emacs.deleteLeft",
+                "when": "inRegionMode"
+            },
+            {
+                "key": "delete",
+                "command": "emacs.deleteRight",
+                "when": "inRegionMode"
+            },
+            {
                 "key": "ctrl+g",
                 "command": "cancelSelection",
-                "when": "editorHasTextFocus && editorHasSelection"
+                "when": "editorFocus && editorHasSelection"
             },
             {
                 "key": "ctrl+g",
@@ -205,6 +235,11 @@
             {
                 "key": "ctrl+space",
                 "command": "emacs.startRegionMode",
+                "when": "editorFocus"
+            },
+            {
+                "key": "ctrl+x space",
+                "command": "emacs.startColumnRegionMode",
                 "when": "editorFocus"
             }
         ]
