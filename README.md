@@ -1,4 +1,5 @@
-# vscode-emacs-region
+![vscode-emacs-region](images/banner.png)
+
 An extension for Visual Studio Code which provides region selection & operations
 similar to emacs.
 
