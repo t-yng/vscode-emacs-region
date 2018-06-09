@@ -2,7 +2,7 @@
     "name": "emacs-region",
     "displayName": "emacs-region",
     "description": "Provides region selection & operations similar to emacs.",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "publisher": "ayrtonmassey",
     "icon": "images/icon.png",
     "engines": {
