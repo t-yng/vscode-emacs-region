@@ -1,5 +1,6 @@
 # vscode-emacs-region
-An extension for Visual Studio Code which provides region selection & operations similar to emacs.
+An extension for Visual Studio Code which provides region selection & operations
+similar to emacs.
 
 ## Default Keybindings
 
@@ -47,7 +48,9 @@ An extension for Visual Studio Code which provides region selection & operations
 
 It is possible to combine this extension with other cursor movement extensions.
 
-You can use the `inRegionMode` context flag in the `when` clause of your keybind to provide different behaviour for region mode vs. cursor mode. The default keybinds are laid out as follows:
+You can use the `inRegionMode` context flag in the `when` clause of your keybind
+to provide different behaviour for region mode vs. cursor mode. The default
+keybinds are laid out as follows:
 
 ```json
 {
@@ -61,3 +64,20 @@ You can use the `inRegionMode` context flag in the `when` clause of your keybind
     "when": "editorTextFocus && inRegionMode"
 }
 ```
+
+## Contributing
+
+If you'd like to add more features, feel free to send a pull request on GitHub.
+
+## Known Issues
+
+- When cutting text (`emacs.action.clipboardCutAction`), sometimes only the line
+  the cursor is on is removed, but the full region is sent to the clipboard. Not
+  sure what the cause is - perhaps this is related to
+  [vscode#2933](https://github.com/Microsoft/vscode/issues/2933).
+
+## Acknowledgements
+
+Thanks to [t-yng](https://github.com/t-yng) for his original extension, which
+can be found here:
+[t-yng/vscode-emacs-region](https://github.com/t-yng/vscode-emacs-region).

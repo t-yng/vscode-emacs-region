@@ -3,7 +3,8 @@
 	"displayName": "emacs-region",
 	"description": "Provides region selection & operations similar to emacs.",
 	"version": "1.0.0",
-	"publisher": "ayrtonmassey",
+    "publisher": "ayrtonmassey",
+    "icon": "images/icon.png",
 	"engines": {
 		"vscode": "^0.10.6"
 	},
