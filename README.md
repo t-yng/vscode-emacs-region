@@ -1,7 +1,8 @@
 # vscode-emacs-region
-This is an extension for Visual Studio Code which provides region selection similar to that of Emacs.
+An extension for Visual Studio Code which provides region selection & operations similar to emacs.
 
-## Keybindings
+## Default Keybindings
+
 |key|explanation|
 |---|-----------|
 |ctrl+f|move selection cursor right|
@@ -28,6 +29,19 @@ This is an extension for Visual Studio Code which provides region selection simi
 |ctrl+space|start region mode|
 |ctrl+x space|start column region mode|
 |ctrl+g|exit region mode|
+
+## Custom Commands
+
+|command|explanation|
+|-------|-----------|
+|emacs.action.clipboardCopyAction|Copy the selected region and exit region mode.|
+|emacs.action.clipboardCutAction|Cut the selected region and exit region mode.|
+|emacs.action.clipboardPasteAction|Paste over the selected region and exit region mode.|
+|emacs.deleteLeft|Kill region and exit region mode.|
+|emacs.deleteRight|Kill region and exit region mode.|
+|emacs.startRegionMode|Start region mode with a single cursor.|
+|emacs.startColumnRegionMode|Start region mode with multi-line cursors.|
+|emacs.exitRegionMode|Exit any active region mode.|
 
 ## Compatibility With Other Extensions
 
